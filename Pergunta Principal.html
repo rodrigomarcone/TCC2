@@ -45,31 +45,50 @@
 			<p class="lead"><font size="6">Qual a alternativa mais se aproxima da sua opinião a respeito da independência financeira?</font></p> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio"><font size="4">A independência financeira é uma posição extremamente almejada que todos devemos correr atrás de atingir o mais rápido possível</font></label>
+				<label><input type="radio" name="optradio" id = "1"><font size="4">A independência financeira é uma posição extremamente almejada que todos devemos correr atrás de atingir o mais rápido possível</font></label>
 			</div> <br>
 			
 			<div class="radio">			
-				<label><input type="radio" name="optradio"><font size="4">Com uma organização previamente planejada e um controle de gastos, a independência financeira pode ser atingida com o passar do tempo</label>
+				<label><input type="radio" name="optradio" id = "2"><font size="4">Com uma organização previamente planejada e um controle de gastos, a independência financeira pode ser atingida com o passar do tempo</label>
 			</div> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio"><font size="4">A pessoa deve se limitar a exposição aos riscos, a medida em que seu patrimônio é construído, buscando assim, a independência financeira</label>
+				<label><input type="radio" name="optradio" id = "3"><font size="4">A pessoa deve se limitar a exposição aos riscos, a medida em que seu patrimônio é construído, buscando assim, a independência financeira</label>
 			</div> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio"><font size="4">Antes de pensar em independência financeira, a pessoa deve se preocupar em quitar todas as suas dívidas</label>
+				<label><input type="radio" name="optradio" id = "4"><font size="4">Antes de pensar em independência financeira, a pessoa deve se preocupar em quitar todas as suas dívidas</label>
 			</div> <br>
 			
 		</div>	
+			<script>
+			function Direcionar(){
+			
+				if(document.getElementById(1).checked){
+					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%201.html');
+				}
+				if(document.getElementById(2).checked){
+					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%202.html');
+				}
+				if(document.getElementById(3).checked){
+					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%203.html');
+				}
+				if(document.getElementById(4).checked){
+					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%204.html');
+				}
+				else{
+					alert("Marque uma opção!");
+				}
 
+			}
+			</script>
+			
 			<div class "container" align="center">
-				<form action = "">
-					<button type="submit" ><font size="5">Submeter</font></button>
+				<form>
+					<button type="submit" onclick ="Direcionar()"><font size="5">Submeter</font></button>
 				</form>
-			</div>		
+			</div>				
 	</div>	
-	
-
 
 <!-- Rodapé -->
 

@@ -45,29 +45,55 @@
 			<p class="lead"><font size="4">Classifique a importância dos resultados apresentados de acordo com seu perfil de investidor:</font></p> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio"><font size="3">Muito Positiva</label>
+				<label><input type="radio" name="optradio" id = "1"><font size="3">Muito Positiva</label>
 			</div> <br>
 			
 			<div class="radio">			
-				<label><input type="radio" name="optradio">Positiva</label>
+				<label><input type="radio" name="optradio" id = "2">Positiva</label>
 			</div> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio">Neutra</label>
+				<label><input type="radio" name="optradio" id = "3">Neutra</label>
 			</div> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio">Negativa</font></label>
+				<label><input type="radio" name="optradio" id = "4">Negativa</label>
 			</div> <br>
 			
 			<div class="radio">
-				<label><input type="radio" name="optradio">Muito Negativa</font></label>
+				<label><input type="radio" name="optradio" id = "5">Muito Negativa</font></label>
 			</div> <br>
 			
-		</div>		
+		</div>
+		
+		<script>
+			function Direcionar(){
+			
+			if	(document.getElementById(1).checked){
+					alert("Obrigado pelo feedback!");
+				}
+			if	(document.getElementById(2).checked){
+					alert("Obrigado pelo feedback!");
+				}
+			if	(document.getElementById(3).checked){
+					alert("Obrigado pelo feedback!");
+				}
+			if	(document.getElementById(4).checked){
+					alert("Obrigado pelo feedback!");
+				}
+			if	(document.getElementById(5).checked){
+					alert("Obrigado pelo feedback!");
+				}
+			else{
+					alert("Marque uma opção!");
+				}
+			}
+			
+			</script>
+		
 		<div class "container" align="center">
 				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Feedback%20do%20Usu%C3%A1rio.html">
-					<button type="submit" ><font size="5">Avaliar!</font></button>
+					<button type="submit" onclick ="Direcionar()" ><font size="5">Avaliar!</font></button>
 				</form>
 			</div>
 	</div>	
