@@ -14,6 +14,12 @@
 			<link href="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.css" rel="stylesheet">		  
 			<link href="./Sticky Footer Navbar Template for Bootstrap_files/sticky-footer-navbar.css" rel="stylesheet">			
 			<script src="./Sticky Footer Navbar Template for Bootstrap_files/ie-emulation-modes-warning.js.download"></script>  
+			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
    
 <!-- Título -->
 		<title>Perfil de Investidor</title>   
@@ -65,20 +71,21 @@
 			function Direcionar(){
 			
 				if(document.getElementById(1).checked){
-					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%201.html');
+					window.location.ref("file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%201.html");
 				}
-				if(document.getElementById(2).checked){
-					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%202.html');
+				else if(document.getElementById(2).checked){
+					window.open("file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%202.html");
 				}
-				if(document.getElementById(3).checked){
-					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%203.html');
+				else if(document.getElementById(3).checked){
+					window.open("file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%203.html");
 				}
-				if(document.getElementById(4).checked){
-					window.open('file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%204.html');
+				else if(document.getElementById(4).checked){
+					window.open("file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Aplica%C3%A7%C3%A3o%20da%20Teoria%20-%204.html");
 				}
 				else{
 					alert("Marque uma opção!");
 				}
+				
 
 			}
 			</script>
@@ -88,8 +95,25 @@
 					<button type="submit" onclick ="Direcionar()"><font size="5">Submeter</font></button>
 				</form>
 			</div>				
+						
 	</div>	
-
+	
+		<br>
+	<br>
+	<br>
+	<br>
+	
+	
+<!-- Teste -->
+	
+	<div class "container" align="center">
+				
+<label for="file" align="center">Progresso: </label>
+<progress id="file" value="20" max="100"> 20% </progress>
+				
+	</div>
+	
+	
 <!-- Rodapé -->
 
     <footer class="footer">
