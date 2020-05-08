@@ -34,33 +34,90 @@
         </div>      
       </div>
     </nav>
+	
+<!-- Grafico -->
+
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Gastos Essenciais',     50],
+          ['Divídas/Investir',      20],
+          ['Lazer',  30],
+        ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Gastos Essenciais',     50],
+          ['Divídas/Investir',      20],
+          ['Lazer',  30],
+        ]);      
+		var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
 
  <!-- Resultado-->
-    <div class="container">
-	
+    <div class="container">	
 		<div class="page-header" >
-			<h1>Teoria Recomendada</h1>
+			<h1>Regra dos 50-30-20</h1>
 		</div>	
 		
-		<div class="container" align: center>	<br> <br> <br>
-
-			<div class="container" align="center">
-				<label><font size="7">Regra dos 50-30-20</font></label>
-			</div><br><br><br>			
+		<div class="container" align = "left"style = "float:left; width: 40%;">
+				<label><font size="5">Recomendado:</font></label>			
+				<div id="piechart" style="width: 900px; height: 500px;" align="center"></div>
+			</div> 
 			
-			<div class="container">
-				<h2><font size="5">Uma organização nas suas finanças será o ponto de partida para uma vida financeira estabilizada e sem preocupações. 
-				Gastos indevidos e uma má distribuição da renda pode comprometer todo o orçamento anual. 
-				Sendo assim, uma divisão mais objetiva, focada em poupar para o futuro e visando a aposentadoria, pode ser ideal para seu propósito, sem comprometer sua qualidade de vida.</font></h2>
-			</div> <br>	<br> <br> <br> <br>	
+			<div class="container" align = "left" style = "float:right; width: 40%;">
+				<label><font size="5">Você está fazendo:</font></label>			
+				<div id="piechart2" style="width: 900px; height: 500px;" align="right"></div>
+			</div> 	
+	</div>
+	
 			
-			<div class "container" align="center">
+	
+			<div class "container" align = "center">
 				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Feedback%20do%20Usu%C3%A1rio.html">
 					<button type="submit" ><font size="5">Dar Feedback</font></button>
 				</form>
 			</div>
 			
-		</div>		
+			<br>
+			<br>
+			
+	<div class "container" align="center">
+				
+	<label for="file" align="center">Progresso: </label>
+	<progress id="file" value="80" max="100"> 0% </progress>
+				
 	</div>
 
 
