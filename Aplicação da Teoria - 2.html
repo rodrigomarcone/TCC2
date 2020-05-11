@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/index.html">Perfil de Investidor</a>
+          <a class="navbar-brand" href="index.html">Perfil de Investidor</a>
         </div>      
       </div>
     </nav>
@@ -40,44 +40,40 @@
 		<div class="page-header">
 			<h1>Enquadramento de Perfil</h1>
 		</div>	
-
 	
-	<div class="container">			
-		
 	<!-- Pergunta 2 -->
-		<div class="container">
-<br>		
-<br><br>
-			<p class="lead">Você se considera uma pessoa financeiramente estabilizada?</p>
-			<br>
-			<br>
-			<div class="radio">
-				<label><input type="radio" name="optradio2"><font size="3">Considero que estou no caminho, mas ainda falta um longo percurso até minha liberdade financeira</label>
-			</div><br>
-			<div class="radio">
-				<label><input type="radio" name="optradio2">Me considero estável financeiramente e estou confortável com minha vida atual</font></label>
-			</div>
-		</div>		
-	</div><br><br><br>
-	
-	<div class="container">		
+		<form id="form1" action = "Resultado da Aplicação - 2.html" method="POST" target="_parent">
+		
+		<div class="container"><br>
 
-			<div class "container" align="center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Resultado%20da%20Aplica%C3%A7%C3%A3o%20-%202.html">
-					<button type="submit" ><font size="5">Submeter</font></button>
-				</form>
-			</div>	
-	</div>	
-	
-	
-<div class "container" align="center">
-				<br>
-				<br>
+			<p class="lead" align="left">Qual a sua idade?</p>
+
+			<div class="radio">
+				<label><input id="age" type="text" name = "age" size="3"></label>
+			</div><br>
+
+		</div>
+
+		<div class="container"><br>
+
+			<p class="lead" align="left">Quantos % você investe em renda variável?</p>
+					
+			<div class="radio">
+				<label><input id="percentual" type="text" name = "percentual" size="3">%</font></label>
+			</div>
+
+		</div><br><br><br><br>
+
+		<div class "container" align="center">
+			<button id="btnSubmit" type="submit" ><font size="5">Submeter</font></button><br><br><br>
 			<label for="file" align="center">Progresso: </label>
 			<progress id="file" value="60" max="100"> 0% </progress>
-				
-	</div>
+		</div>
 
+		</form>
+
+	</div><br>
+		
 <!-- Rodapé -->
 
     <footer class="footer">
@@ -95,6 +91,17 @@
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+	
+	<script>
+	$(document).ready(function(){
+	
+		$("#btnSubmit").on("click", function(e){
+			debugger
+			$("#form1").attr("action", $("#form1").attr("action") + "?age=" + $("#age").val() + "&percentual=" + $("#percentual").val());			
+		});
+		
+	});
+	</script>
   
 
 <span></span></body></html>

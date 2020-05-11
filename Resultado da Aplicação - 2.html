@@ -30,45 +30,49 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/index.html">Perfil de Investidor</a>
+          <a class="navbar-brand" href="index.html">Perfil de Investidor</a>
         </div>      
       </div>
     </nav>
 
  <!-- Resultado-->
-    <div class="container">
+
+	<div id="log"></div>
+	<div id="pass"></div>
+    
+	 <div class="container">	
 	
 		<div class="page-header" >
-			<h1>Teoria Recomendada</h1>
-		</div>	
+			<h1>100 minus your age</h1>
+		</div>	<br><br><br>
 		
-		<div class="container" align: center>	<br> <br> <br>
-
-			<div class="container" align="center">
-				<label><font size="7">100 Minus Your Age</font></label>
-			</div><br><br><br>			
+		
+		<div class="container" align = "center" style = "float:left; width:50%;">
+				<label><font size="5">A teoria recomenda que você invista:</font></label><br><br><br>
+				<div id="text1" align="center" >
+					<p id="ageLabel" style="font-size:36px"></p>
+				</div>
+		</div> 
 			
-			<div class="container">
-				<h2><font size="5">Devido ao seu desejo de atingir a liberdade financeira, a renda variável pode ser um forte aliado. 
-				Apesar dos riscos de se expor ao mercado de ações, um patrimônio antes de tudo, deve ser construído. 
-				Sendo assim, comece desde já, que no futuro com uma quantia já estabilizada, não será necessária tanta exposição.</font></h2>
-			</div> <br>	<br> <br> <br> <br>	
-			
-			<div class "container" align="center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Feedback%20do%20Usu%C3%A1rio.html">
-					<button type="submit" ><font size="5">Dar Feedback</font></button>
-				</form>
-			</div>
-			
-		</div>		
-	</div>
+		<div class="container" align = "center" style = "float:left; width:50%;">
+				<label><font size="5">Você está investindo:</font></label><br><br><br>
+				<div id="text1"  align="center" >
+					<p id="percentualLabel" style="font-size:36px"></p>
+				</div>
+		</div> 
+		
+	</div><br><br><br><br><br><br><br><br><br>
 	
-	<div class "container" align="center">
-				<br>
-				<br>
-<label for="file" align="center">Progresso: </label>
-<progress id="file" value="80" max="100"> 0% </progress>
-				
+	<div class "container" align = "center">
+			<form action = "Feedback do Usuário.html">
+					<button type="submit" ><font size="5">Dar Feedback</font></button>
+			</form>
+	</div>	
+		<br>
+		<br>
+	<div class "container" align="center">				
+			<label for="file" align="center">Progresso: </label>
+			<progress id="file" value="80" max="100"> 0% </progress>				
 	</div>
 
 
@@ -91,5 +95,20 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
   
+	<script>
 
+		debugger
+		var queryString = decodeURIComponent(window.location.search);
+		queryString = queryString.substring(1);
+		var queries = queryString.split("&");
+		
+		var age = (100 - parseInt(queries[0].split("=")[1]));
+		var percentual = (parseInt(queries[1].split("=")[1]));
+		
+		$("#ageLabel").text(age + "%");
+		$("#percentualLabel").text(percentual + "%");
+		
+	
+	</script>
+	
 <span></span></body></html>

@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/index.html">Perfil de Investidor</a>
+          <a class="navbar-brand" href="index.html">Perfil de Investidor</a>
         </div>      
       </div>
     </nav>
@@ -43,19 +43,26 @@
 		</div>	
 		
 		<div class="container" align: center>	<br> <br> <br>
-
+			<input type="hidden" id="option1" value="Vocês está fazendo corretamente! Antes de investir em qualquer tipo de investimento, a toeria recomenda que todas
+			as dívidas sejam quitadas antes, para evitar que os juros fiquem cada vez maiores e você possa investir sem preocupações!">
+			<input type="hidden" id="option2" value="Vocês deve quitar suas dívidas antes! Segundo a teoria, caso você deixar uma dívida acumular, os juros irão 
+			aumentar cada vez mais e você pagará um valor bem maior no futuro! Quite suas dívidas antes, depois pense em investir!.">
+			</input>
+			
 			<div class="container" align="center">
-				<label><font size="7">Pay Yourself First</font></label>
+				<label><font size="7" input type= "hidden" id="option 1">Pay Yourself First</font></label>
 			</div><br><br><br>			
 			
 			<div class="container">
-				<h2><font size="5">Devido a dívida atual que está em aberto, recomendamos que você quite sua dívida o mais rápido possível de forma que o dinheiro destinado a essa dívida no final do mês, 
-				seja destinado à sua aposentadoria e investimentos a longo prazo. Caso você gaste todo seu dinheiro e esqueça da dívida que está em aberto, 
-				ela pode acabar virando uma bola de neve e os juros poderão acabar com todas suas economias e planos futuros.</font></h2>
+				<h2>
+					<p id="paragraph1" style="font-size:24px">
+
+					</p>
+				</h2>
 			</div> <br>	<br> <br> <br> <br>	
 			
 			<div class "container" align="center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Feedback%20do%20Usu%C3%A1rio.html">
+				<form action = "Feedback do Usuário.html">
 					<button type="submit" ><font size="5">Dar Feedback</font></button>
 				</form>
 	</div>
@@ -91,6 +98,25 @@
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+	
+	<script>
+		$(document).ready(function(){
+			var queryString = decodeURIComponent(window.location.search);
+			queryString = queryString.substring(1);
+			
+			var queries = queryString.split("&")
+			var optionSelected = queries[0].split("=")[1];
+			
+			if(parseInt(optionSelected) == 1)
+			{
+				$("#paragraph1").text($("#option1").val());
+			}
+			else if(parseInt(optionSelected) == 2)
+			{
+				$("#paragraph1").text($("#option2").val());
+			}
+		});
+	</script>
   
 
 <span></span></body></html>

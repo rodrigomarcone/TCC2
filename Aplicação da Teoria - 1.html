@@ -37,51 +37,88 @@
 
  <!-- Perguntas-->
     <div class="container">
+
 		<div class="page-header">
 			<h1>Enquadramento de Perfil</h1>
-		</div>	
-		
+		</div>			
 		
 	<!-- Pergunta -->
-		<div class="container" method = "get">		
+		<div class="container" >
 			<p class="lead">Quando você recebe seu salário, como voce distribui?</p><br>
 			<div class="radio">
-				<label><input type="radio" name="optradio2"><font size="3">50% Gastos Gerais – 30% Hobbies/Lazer – 20% Investir</label>
+				<label><input type="radio" id="1" name="optradio2"><font size="3">50% Gastos Gerais – 30% Hobbies/Lazer – 20% Investir</label>
 			</div><br>
 			<div class="radio">
-				<label><input type="radio" name="optradio2">90% Gastos Gerais – 10% Hobbies/Lazer – 0% Investir</label>
+				<label><input type="radio" id="2" name="optradio2">90% Gastos Gerais – 10% Hobbies/Lazer – 0% Investir</label>
 			</div><br>
 			<div class="radio">
-				<label><input type="radio" name="optradio2">30% Gastos Gerais – 60% Hobbies/Lazer – 10% Investir</label>
+				<label><input type="radio" id="3" name="optradio2">30% Gastos Gerais – 60% Hobbies/Lazer – 10% Investir</label>
 			</div><br>
 			<div class="radio">
-				<label><input type="radio" name="optradio2">70% Gastos Gerais – 30% Hobbies/Lazer – 0% Investir</label>
+				<label><input type="radio" id="4" name="optradio2">70% Gastos Gerais – 30% Hobbies/Lazer – 0% Investir</label>
 			</div><br>
 			<div class="radio">
-				<label><input type="radio" name="optradio2">30% Gastos Gerais – 20% Hobbies/Lazer – 50% Investir </font></label>
+				<label><input type="radio" id="5" name="optradio2">30% Gastos Gerais – 20% Hobbies/Lazer – 50% Investir </font></label>
 			</div>
-		</div>		
+		</div>
 	</div>
 	
 	<div class="container">			
 	
-	<div class "container" align="center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Resultado%20da%20Aplica%C3%A7%C3%A3o%20-%201.html">
-					<button type="submit" ><font size="4">Submeter</font></button>	
-				</form>
+		<div class "container" align="center">
+
+			<form id="form1" action = "Resultado da Aplicação - 1.html" method="POST" target="_parent" enctype="application/x-www-form-urlencoded">
+						<button id="btnSubmit" type="submit" ><font size="4">Submeter</font></button>	
+			</form>
+					
+		</div>
+	
+		<div class "container" align="center"><br><br>		
+			
+			<label for="file" align="center">Progresso: </label>
+			<progress id="file" value="60" max="100"> 0% </progress>
+					
+		</div>
 				
 	</div>
 	
-	<div class "container" align="center">
-				<br>
-				<br>
-			<label for="file" align="center">Progresso: </label>
-			<progress id="file" value="60" max="100"> 0% </progress>
-				
-	</div>
-				
-	</div>
-
+	<script src="./Sticky Footer Navbar Template for Bootstrap_files/jquery.min.js.download"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+	<script>
+	
+	$(document).ready(function(){	
+		$("#btnSubmit").on("click", function(e){
+		debugger
+			var selectedInput = $("input[type=radio]:checked").attr("id");
+			
+			switch(selectedInput){
+				case "1":
+					$("#form1").attr("action", $("#form1").attr("action") + "?var1=50&var2=30&var3=20")
+					break;
+				case "2":
+					$("#form1").attr("action", $("#form1").attr("action") + "?var1=90&var2=10&var3=0")					
+					break;
+				case "3":
+					$("#form1").attr("action", $("#form1").attr("action") + "?var1=30&var2=60&var3=10")
+					break;
+				case "4":
+					$("#form1").attr("action", $("#form1").attr("action") + "?var1=70&var2=30&var3=0")
+					break;
+				case "5":
+					$("#form1").attr("action", $("#form1").attr("action") + "?var1=30&var2=20&var3=50")					
+					break;
+				default:
+					alert("Favor selecionar uma opção.");
+					e.preventDefault();
+			}
+		});
+	});
+	
+	</script>
+	
 <!-- Rodapé -->
 
     <footer class="footer">
@@ -94,11 +131,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/jquery.min.js.download"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+    
   
 
 <span></span></body></html>

@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/index.html">Perfil de Investidor</a>
+          <a class="navbar-brand" href="index.html">Perfil de Investidor</a>
         </div>      
       </div>
     </nav>
@@ -45,17 +45,17 @@
 		<div class="container">		
 			<p class="lead">Caso você esteja com alguma dívida em aberto, qual atitude você toma ao receber seu salário?</p> <br>
 			<div class="radio">
-				<label><input type="radio" name="optradio"><font size="3">Quito a dívida o mais rápido possível</label>
+				<label><input id="1" type="radio" name="optradio"><font size="3">Quito a dívida o mais rápido possível</label>
 			</div> <br>
 			<div class="radio">
-				<label><input type="radio" name="optradio">Utilizo o dinheiro para demais gastos</font></label>
+				<label><input id="2" type="radio" name="optradio">Utilizo o dinheiro para demais gastos</font></label>
 			</div>
 		</div>		
 	</div>	
 	
 	<div class "container" align="center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Resultado%20da%20Aplica%C3%A7%C3%A3o%20-%204.html">
-					<button type="submit" ><font size="5">Submeter</font></button>
+				<form id="form1" action = "Resultado da Aplicação - 4.html" method="POST" target="_parent" >
+					<button id="btnSubmit" type="submit" ><font size="5">Submeter</font></button>
 				</form>
 			</div>
 			
@@ -88,6 +88,27 @@
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+	
+	<script>
+	$(document).ready(function(){
+	
+		$("#btnSubmit").on("click", function(e){
+			var optionSelected = $("input[type=radio]:checked").attr("id");
+			
+			switch(optionSelected){
+				case "1":
+					$("#form1").attr("action", $("#form1").attr("action") + "?id=1");
+					break;
+				case "2":
+					$("#form1").attr("action", $("#form1").attr("action") + "?id=2");
+					break;
+				default:
+					alert("Favor selecionar uma opção.");
+			}
+		});		
+	
+	});
+	</script>
   
 
 <span></span></body></html>

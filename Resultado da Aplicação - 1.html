@@ -2,6 +2,15 @@
 <!-- Conteúdo CSS -->
 <html lang="pt-br">
 
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Sticky Footer Navbar Template for Bootstrap_files/jquery.min.js.download"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+
 	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,60 +39,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/index.html">Perfil de Investidor</a>
+          <a class="navbar-brand" href="index.html">Perfil de Investidor</a>
         </div>      
       </div>
     </nav>
-	
-<!-- Grafico -->
-
-
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Gastos Essenciais',     50],
-          ['Divídas/Investir',      20],
-          ['Lazer',  30],
-        ]);
-
-        var options = {
-          title: ''
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Gastos Essenciais',     50],
-          ['Divídas/Investir',      20],
-          ['Lazer',  30],
-        ]);      
-		var options = {
-          title: ''
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-        chart.draw(data, options);
-      }
-    </script>
-
 
  <!-- Resultado-->
     <div class="container">	
@@ -92,12 +51,12 @@
 		</div>	
 		
 		<div class="container" align = "left"style = "float:left; width: 40%;">
-				<label><font size="5">Recomendado:</font></label>			
+				<label><font size="5">Você está fazendo:</font></label>			
 				<div id="piechart" style="width: 900px; height: 500px;" align="center"></div>
 			</div> 
 			
 			<div class="container" align = "left" style = "float:right; width: 40%;">
-				<label><font size="5">Você está fazendo:</font></label>			
+				<label><font size="5">Recomendado:</font></label>			
 				<div id="piechart2" style="width: 900px; height: 500px;" align="right"></div>
 			</div> 	
 	</div>
@@ -105,7 +64,7 @@
 			
 	
 			<div class "container" align = "center">
-				<form action = "file:///C:/Users/rodri/Google%20Drive/PUC/TCC/TCC%20II/TCC%20II/Feedback%20do%20Usu%C3%A1rio.html">
+				<form action = "Feedback do Usuário.html">
 					<button type="submit" ><font size="5">Dar Feedback</font></button>
 				</form>
 			</div>
@@ -131,14 +90,73 @@
     </footer>
 		
  <!-- Entender -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/jquery.min.js.download"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/bootstrap.min.js.download"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./Sticky Footer Navbar Template for Bootstrap_files/ie10-viewport-bug-workaround.js.download"></script>
+
+ <!-- Grafico -->
+
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		
+		var gastos;
+		var dividas;
+		var lazer;
+		
+		var queryString = decodeURIComponent(window.location.search);
+		queryString = queryString.substring(1);
+		
+		var queries = queryString.split("&");
+		
+		gastos = parseInt(queries[0].split("=")[1]);
+		dividas = parseInt(queries[1].split("=")[1]);
+		lazer = parseInt(queries[2].split("=")[1]);	
+		
+		$(document).ready(function (){
+			
+			decodeURI();
+			
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(function(){
+				drawChart();
+				drawChart2();
+			});
+		});
+		
+		function drawChart() {
+
+			var data = google.visualization.arrayToDataTable([
+			['Task', 'Hours per Day'],
+			['Gastos Essenciais', gastos],
+			['Divídas/Investir', dividas],
+			['Lazer', lazer],
+			]);
+
+			var options = {
+			title: ''
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+			chart.draw(data, options);
+		}
+		
+		function drawChart2() {
+
+			var data = google.visualization.arrayToDataTable([
+			['Task', 'Hours per Day'],
+			['Gastos Essenciais',     50],
+			['Divídas/Investir',      20],
+			['Lazer',  30],
+			]);      
+			var options = {
+			title: ''
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+			chart.draw(data, options);
+		}
+	</script>
+    
   
 
 <span></span></body></html>
